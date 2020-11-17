@@ -4,7 +4,7 @@ WORKDIR /usr/app
 
 RUN apk add --no-cache git nodejs nodejs-npm && \
     git clone https://github.com/docker-hy/frontend-example-docker.git . && \
-    npm install
+    npm install && apk del git
 
 EXPOSE 5000
 
