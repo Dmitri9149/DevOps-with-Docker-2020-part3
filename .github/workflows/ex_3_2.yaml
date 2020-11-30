@@ -2,8 +2,8 @@ name: ex_3_2
 
 on:
   push:
-#    tags:
-#      - '**'
+    tags:
+      - '*'
 
 jobs:
   build:
