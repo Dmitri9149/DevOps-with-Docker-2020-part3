@@ -11,7 +11,4 @@ RUN apk add --no-cache git nodejs nodejs-npm && \
 
 USER usr
 
-
-
-
 CMD serve -s -l $PORT dist
