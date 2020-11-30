@@ -7,7 +7,7 @@ RUN apk add --no-cache git nodejs nodejs-npm && \
     npm install -g serve && \
     npm install && \
     npm run build && \
-    RUN adduser -D usr
+    adduser -D usr
 
 USER usr
 
