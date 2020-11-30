@@ -44,3 +44,23 @@ d6e46aa2470d        3 weeks ago          /bin/sh -c #(nop)  CMD ["/bin/sh"]     
 <missing>           3 weeks ago          /bin/sh -c #(nop) ADD file:f17f65714f703db90…   5.57MB              
 ~>/front$ 
 ```
+----------------------------------------
+3.2 A deployment pipeline to heroku
+Let’s create our first deployment pipeline!
+
+For this exercise you can select which ever web application you already have containerized.
+
+If you don’t have any web applications available you can use any one from this course and modify it. (Such as the course material itself)
+
+Let’s use GitHub, CircleCI, and Heroku to deploy to heroku. You can also use GitHub actions instead of CircleCI.
+
+CircleCI offers orbs for Heroku deployment, but you can just use the instructions from Heroku (or exercise 1.16).
+
+Submit a link to the repository with the config.
+
+----------------------------------------------------------------
+
+The deployment pipeline to Heroku was done with GiHub actions    
+(see .github/workflows/ex_3_2.yaml)
+
+The app is here : https://docker-devops-2020.herokuapp.com/
