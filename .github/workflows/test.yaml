@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches:
+      'willneverusethebranch/atall'
 
 jobs:
   build:
