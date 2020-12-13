@@ -4,6 +4,11 @@ error_exit() {
     exit 1
 }
 
+if [ -d "repo" ]; then 
+  echo "./repo already exist -> Exiting."
+  exit 1
+fi
+
 
 if [ -z "$GIT_URL" ]; then
   echo "GIT_URL env variable not set. Exiting."
