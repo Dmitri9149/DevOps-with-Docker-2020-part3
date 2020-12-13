@@ -1,9 +1,10 @@
 FROM alpine:3.12
 
-WORKDIR /usr
+WORKDIR /usr/app
 COPY builder.sh ./
 
 RUN apk add --no-cache git docker && \
-    chmod +x /usr/builder.sh
+    chmod +x builder.sh 
 
-CMD /usr/builder.sh
+
+CMD ./builder.sh
