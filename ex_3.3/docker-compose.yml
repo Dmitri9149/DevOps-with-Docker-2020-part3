@@ -4,10 +4,10 @@ services:
     image: builder:latest
     build: .
     environment:
-      - DOCKER_USERNAME=username
-      - DOCKER_PASSWORD=password
-      - GIT_URL=url
-      - CONTAINER_NAME=container_name
-      - PUSH_TO_DOCKER=true
+      - GIT_URL=${GIT_URL}
+      - DOCKER_USERNAME=${DOCKER_USERNAME}
+      - DOCKER_PASSWORD=${DOCKER_PASSWORD}
+      - CONTAINER_NAME=${CONTAINER_NAME}
+      - PUSH_TO_DOCKER=false
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
