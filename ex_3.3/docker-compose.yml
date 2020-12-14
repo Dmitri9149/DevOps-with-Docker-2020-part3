@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   get_and_build:
-    image: get_build:latest
+    image: getBuild:latest
     build: .
     environment:
       - GIT_URL=${GIT_URL}
