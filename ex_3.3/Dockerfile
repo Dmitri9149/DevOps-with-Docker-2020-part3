@@ -7,4 +7,4 @@ RUN apk add --no-cache git docker && \
     chmod +x builder.sh 
 
 
-CMD ./builder.sh
+ENTRYPOINT [ "./builder.sh" ]
