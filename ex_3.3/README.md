@@ -19,3 +19,5 @@ The builder.sh script will -> get repo from
 GIT_URL and ->  finally (using docker cli within the container) the 'staticpage'image will be build. 
 If PUSH_TO_DOCKER=true in .env ->  the image will be pushed to DockerHub.
 
+### See the image on DockerHub: https://hub.docker.com/repository/docker/dmitri9149/staticpage
+
