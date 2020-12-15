@@ -8,6 +8,6 @@ services:
       - DOCKER_USERNAME=${DOCKER_USERNAME}
       - DOCKER_PASSWORD=${DOCKER_PASSWORD}
       - CONTAINER_NAME=${CONTAINER_NAME}
-      - PUSH_TO_DOCKER=false
+      - PUSH_TO_DOCKER=${PUSH_TO_DOCKER}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
