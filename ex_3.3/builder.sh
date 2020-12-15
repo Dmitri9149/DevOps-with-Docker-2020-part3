@@ -32,6 +32,6 @@ docker build -t $CONTAINER_NAME . || error_exit "Unable to build image. Exiting"
 
 if [ "$PUSH_TO_DOCKER" = true ]; then
   echo "start login"
-  docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  docker push $CONTAINER_NAME
+  docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD || error_exit "Unable to login. Exiting"
+  docker push $CONTAINER_NAME || error_exit "Unable to push. Exiting"
 fi
