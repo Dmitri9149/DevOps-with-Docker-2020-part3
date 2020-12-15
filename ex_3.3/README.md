@@ -11,8 +11,11 @@ EXPOSE 80 will be the port.
 
 We will generate 'staticpage' image by executing: 
 
-```sudo docker-compose up```    
-with env vars determined in .env file. The docker image with name 'get_build' will be built , the container with the same name will be run, the builder.sh script will be executed inside the container 'get_build'. The builder.sh script will get repo from 
-GIT_URL and finally (using docker cli within the container) the 'staticpage'image will be build. 
-If PUSH_TO_DOCKER=tru in .env , the image will be pushed to DockerHub.
+```sudo docker-compose up```  
+  
+with env vars determined in .env file.  
+The docker image with name 'get_build' will be built -> the container with the same name will be run -> the builder.sh script will be executed inside the container 'get_build'.  
+The builder.sh script will -> get repo from 
+GIT_URL and ->  finally (using docker cli within the container) the 'staticpage'image will be build. 
+If PUSH_TO_DOCKER=true in .env ->  the image will be pushed to DockerHub.
 
