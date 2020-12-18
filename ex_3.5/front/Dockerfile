@@ -1,5 +1,4 @@
 FROM node:alpine as build
-
 WORKDIR /usr/app
 
 RUN apk add --no-cache git && \
@@ -8,15 +7,13 @@ RUN apk add --no-cache git && \
     npm run build
 
 
-## -D do not assign password; -G add user to existing group
-#    adduser -D -G new_user new_group && \
-## -R recursion
-#    chown -R new_user:new_group /usr/app
-
-FROM node:alpine 
+FROM node:alpine
 WORKDIR /usr/app
 COPY --from=build /usr/app/dist /usr/app/dist
-RUN npm install -g serve
-EXPOSE 5000
+RUN npm install -g serve && \
+    addgroup -S new_group && adduser -S new_user -G new_group && \
+    chown -R new_user:new_group /usr/app
 
+USER new_user
+EXPOSE 5000
 CMD ["serve", "-s", "-l", "5000", "dist"]
