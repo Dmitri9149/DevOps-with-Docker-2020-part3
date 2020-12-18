@@ -10,6 +10,8 @@ RUN apk add --no-cache git nodejs nodejs-npm && \
 # -R recursion
     chown -R new_user:new_group /usr/app
 
+USER new_user
+
 EXPOSE 8000
 
 CMD ["npm", "start"] add .
