@@ -11,7 +11,7 @@ FROM node:alpine
 WORKDIR /usr/app
 COPY --from=build /usr/app/dist /usr/app/dist
 RUN npm install -g serve && \
-    addgroup -S new_group && adduser -S new_user -G new_group && \
+    addgroup new_group && adduser -D new_user -G new_group && \
     chown -R new_user:new_group /usr/app
 
 USER new_user
