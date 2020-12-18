@@ -57,3 +57,17 @@ abe7f23ea4c8   57 seconds ago   /bin/sh -c apk add --no-cache git nodejs nod… 
 <missing>      43 hours ago     /bin/sh -c #(nop) ADD file:ec475c2abb2d46435…   5.58MB    
 ~>/front$ 
 ```
+
+Backend not optim 
+```
+~>/back$ sudo docker history back-n:latest
+IMAGE          CREATED              CREATED BY                                      SIZE      COMMENT
+f1f5680b576c   About a minute ago   /bin/sh -c #(nop)  CMD ["npm" "start"]          0B        
+c393c9c30010   About a minute ago   /bin/sh -c #(nop)  EXPOSE 8000                  0B        
+65cc13551602   About a minute ago   /bin/sh -c #(nop)  USER new_user                0B        
+88338863ae9c   About a minute ago   /bin/sh -c apk add --no-cache git nodejs nod…   83.5MB    
+828264d15a3a   About a minute ago   /bin/sh -c #(nop) WORKDIR /usr/app              0B        
+389fef711851   44 hours ago         /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
+<missing>      44 hours ago         /bin/sh -c #(nop) ADD file:ec475c2abb2d46435…   5.58MB    
+~>/back$ 
+```
