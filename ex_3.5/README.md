@@ -42,3 +42,18 @@ d205cc05851a   31 minutes ago   /bin/sh -c apk add --no-cache git &&     git… 
 <missing>      43 hours ago     /bin/sh -c #(nop) ADD file:8ed80010e443da19d…   5.61MB    
 ~>/back$ 
 ```
+
+As unoptimized frontend let us take the frontend in Dockerfile ex. 3.4 : the base image there is alpine (not node:alpine as in optimized frontend Dockerfile). 
+The size of unoptimized image is 283.58 MB. 
+```
+~>/front$ sudo docker history front-n:latest
+IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+598e92a13da5   51 seconds ago   /bin/sh -c #(nop)  CMD ["npm" "start"]          0B        
+4f50f55d33eb   51 seconds ago   /bin/sh -c #(nop)  EXPOSE 5000                  0B        
+9cd9f7b46c1f   51 seconds ago   /bin/sh -c #(nop)  USER new_user                0B        
+abe7f23ea4c8   57 seconds ago   /bin/sh -c apk add --no-cache git nodejs nod…   278MB     
+809d01f2a5b4   2 minutes ago    /bin/sh -c #(nop) WORKDIR /usr/app              0B        
+389fef711851   43 hours ago     /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
+<missing>      43 hours ago     /bin/sh -c #(nop) ADD file:ec475c2abb2d46435…   5.58MB    
+~>/front$ 
+```
