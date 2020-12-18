@@ -1,15 +1,15 @@
-FROM alpine
+FROM node:alpine
 
 WORKDIR /usr/app
 
-RUN apk add --no-cache git nodejs nodejs-npm && \
+RUN apk add --no-cache git && \
     git clone https://github.com/docker-hy/backend-example-docker.git . && \
     npm install && \
-## -D do not assign password; -G add user to existing group
-    adduser -D -G new_user new_group && \
-# -R recursion
+    apk del git && \
+    addgroup -S new_group && adduser -S new_user -G new_group && \
     chown -R new_user:new_group /usr/app
+USER new_user
 
 EXPOSE 8000
 
-CMD ["npm", "start"] add .
+CMD ["npm", "start"]
