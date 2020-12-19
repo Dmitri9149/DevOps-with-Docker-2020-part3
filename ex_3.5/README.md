@@ -1,4 +1,32 @@
-### For the OPTIMISED frontend Dockerfile: the size is about 238.97 MB
+### Some size experiments with sizes of images
+
+For the 1.10 ex. frontend, Dockerfile (from which we start): image size is about 682.2 MB 
+(base image ubuntu) + copy project from local folder
+
+```
+~>/frontend-example-docker$ sudo docker history front-1-10
+IMAGE          CREATED              CREATED BY                                      SIZE      COMMENT
+cb5092ee87fa   About a minute ago   /bin/sh -c #(nop)  CMD ["/bin/sh" "-c" "npm …   0B        
+926f54c622b9   About a minute ago   /bin/sh -c #(nop)  ENV API_URL=http://127.0.…   0B        
+7de01310261d   About a minute ago   /bin/sh -c #(nop)  EXPOSE 5000                  0B        
+36ef14b86275   About a minute ago   /bin/sh -c #(nop) COPY dir:905a9d88c332fd7f8…   196MB     
+a521c68fd400   2 minutes ago        /bin/sh -c npm install                          172MB     
+67d6dd617fb0   3 minutes ago        /bin/sh -c #(nop) COPY file:aaeb58e8845b0843…   1.7kB     
+70061ba5b3e6   3 minutes ago        /bin/sh -c apt install -y nodejs                103MB     
+a6f2113a0b03   3 minutes ago        /bin/sh -c curl -sL https://deb.nodesource.c…   33.6MB    
+045605572c99   3 minutes ago        /bin/sh -c apt-get update && apt-get install…   46.6MB    
+b25d03f486b0   4 minutes ago        /bin/sh -c #(nop) WORKDIR /dist                 0B        
+9499db781771   3 weeks ago          /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
+<missing>      3 weeks ago          /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B        
+<missing>      3 weeks ago          /bin/sh -c rm -rf /var/lib/apt/lists/*          0B        
+<missing>      3 weeks ago          /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B      
+<missing>      3 weeks ago          /bin/sh -c #(nop) ADD file:8eef54430e581236e…   131MB     
+~>/frontend-example-docker$ 
+```
+
+
+
+For the OPTIMISED frontend Dockerfile: the size is about 238.97 MB
 ```
 ??????>/front$ sudo docker history front:latest
 IMAGE          CREATED              CREATED BY                                      SIZE      COMMENT
