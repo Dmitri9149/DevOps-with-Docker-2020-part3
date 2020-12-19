@@ -528,3 +528,37 @@ Make sure the containers start their processes as a non-root user.
 TIP man chown may help you if you have access errors
 ->---------------------------------------------------------------
 
+See ex_3.4/front and ex_3.4/back   Dockerfiles
+->--------------------------------------------------------
+->----------------------------------------------------------
+3.5
+Document the image size before the changes.
+
+Rather than going to FROM alpine or scratch, lets go look into docker-node and we should find a way how to run a container that has everything pre-installed for us. There’s even a best practices guide
+
+Return back to our frontend & backend Dockerfiles and change the FROM to something more suitable. Make sure the application still works after the changes.
+
+Document the size after this change. If you used the alpine version the size for frontend can be less than 250MB. The backend can be below 150MB.
+->-------------------------------------------------------------
+
+See ex_3.5 folder README.md
+
+->------------------------------------------------------------------
+->--------------------------------------------------------------------
+
+3.6
+Multi-stage builds. Lets do a multi-stage build for the frontend project since we’ve come so far with the application.
+
+Even though multi-stage builds are designed mostly for binaries in mind, we can leverage the benefits with our frontend project as having original source code with the final assets makes little sense. Build it with the instructions in README and the built assets should be in dist folder.
+
+You can still use the serve to serve the static files or try out something else.
+->--------------------------------------------------------------------
+
+
+->----------------------------------------------------------------------------
+->------------------------------------------------------------------------------
+3.7
+Do all or most of the optimizations from security to size for any other Dockerfile you have access to, in your own project or for example the ones used in previous “standalone” exercises. Please document Dockerfiles both before and after.
+->--------------------------------------------------------------------
+->----------------------------------------------------------------------
+
