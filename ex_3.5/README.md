@@ -112,22 +112,22 @@ d205cc05851a   31 minutes ago   /bin/sh -c apk add --no-cache git &&     git… 
 
 ->-----------------------------------------------------------------------------------
 
-Let us take the frontend Dockerfile ex. 3.4. 
+The frontend Dockerfile ex. 3.4. 
 The base image is 'alpine'.
 Non root user is added. No multistage building. 
-The size of image is 283.58 MB. 
+The size of image is 313.58 MB. 
 
 (From 'node:alpine' + multistage building,  as in frontend Dockerfile ex. 3.5 we get -> 238.97 MB image.)
 ```
-~>/front$ sudo docker history front-n:latest
+~>/front$ sudo docker history front:latest
 IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
-598e92a13da5   51 seconds ago   /bin/sh -c #(nop)  CMD ["npm" "start"]          0B        
-4f50f55d33eb   51 seconds ago   /bin/sh -c #(nop)  EXPOSE 5000                  0B        
-9cd9f7b46c1f   51 seconds ago   /bin/sh -c #(nop)  USER new_user                0B        
-abe7f23ea4c8   57 seconds ago   /bin/sh -c apk add --no-cache git nodejs nod…   278MB     
-809d01f2a5b4   2 minutes ago    /bin/sh -c #(nop) WORKDIR /usr/app              0B        
-389fef711851   43 hours ago     /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
-<missing>      43 hours ago     /bin/sh -c #(nop) ADD file:ec475c2abb2d46435…   5.58MB    
+7b4008d2ea14   8 minutes ago    /bin/sh -c #(nop)  ENTRYPOINT ["npm" "start"]   0B        
+a2c35f15829f   8 minutes ago    /bin/sh -c #(nop)  EXPOSE 5000                  0B        
+6af2e478c89e   8 minutes ago    /bin/sh -c #(nop)  USER new_user                0B        
+5576362deccf   8 minutes ago    /bin/sh -c apk add --no-cache git nodejs nod…   308MB     
+32f549bae854   10 minutes ago   /bin/sh -c #(nop) WORKDIR /usr/app              0B        
+389fef711851   3 days ago       /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
+<missing>      3 days ago       /bin/sh -c #(nop) ADD file:ec475c2abb2d46435…   5.58MB    
 ~>/front$ 
 ```
 ->----------------------------------------------------
