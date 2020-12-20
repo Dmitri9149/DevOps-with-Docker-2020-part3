@@ -1,4 +1,5 @@
-The ouput of history command for the original Dockerfile:
+The ouput of history command for the original Dockerfile (see Dockerfile_original):
+(the size of image is about 532.36 MB)
 ```
 ~>/Dockerized-join-calculus$ sudo docker history jocaml:latest
 IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
@@ -30,42 +31,22 @@ b9be2c80c106   12 minutes ago   /bin/sh -c #(nop) WORKDIR /home/join/JoCaml_… 
 ~>/Dockerized-join-calculus$ 
 ```
 
-Intermediate version v1 : 
+Final version (see Dockerfile):
+(the size of image is about 486.9 MB but vim is added to the final version, 
+which add about 87.9 MB , so the comparable value is 399.0 MB in final version) 
 ```
 ~>/Dockerized-join-calculus$ sudo docker history jocaml:latest
-IMAGE          CREATED             CREATED BY                                      SIZE      COMMENT
-979eb47ba781   28 seconds ago      /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
-0d4fb737645f   28 seconds ago      /bin/sh -c #(nop)  USER join                    0B        
-0a0dc254ca52   29 seconds ago      /bin/sh -c chown --recursive join:group /hom…   19.3MB    
-5f395ff3a2cd   43 seconds ago      /bin/sh -c adduser --disabled-password --sys…   40.4kB    
-7f48dae0b1b1   44 seconds ago      /bin/sh -c addgroup --system group              2.15kB    
-a5d0be3deb97   45 seconds ago      /bin/sh -c #(nop) WORKDIR /home/join            0B        
-8c74b9dffced   47 seconds ago      /bin/sh -c apt-get update && apt-get install…   232MB     
-3910837e55ab   5 minutes ago       /bin/sh -c #(nop) WORKDIR /home/join/JoCaml_…   0B        
-5b3c0cb32d03   5 minutes ago       /bin/sh -c apt-get update &&     apt-get ins…   51MB      
-6009384b29c8   26 minutes ago      /bin/sh -c #(nop) WORKDIR /home/join/JoCaml_…   0B        
-8fac24139163   About an hour ago   /bin/sh -c ln -sf /bin/bash /bin/sh             9B        
-9499db781771   3 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
-<missing>      3 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B        
-<missing>      3 weeks ago         /bin/sh -c rm -rf /var/lib/apt/lists/*          0B        
-<missing>      3 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B      
-<missing>      3 weeks ago         /bin/sh -c #(nop) ADD file:8eef54430e581236e…   131MB     
+IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+02eac3269666   43 minutes ago   /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
+cb473cb38c73   43 minutes ago   /bin/sh -c #(nop)  USER join                    0B        
+db95d6feab38   43 minutes ago   /bin/sh -c apt-get update && apt-get install…   87.9MB    
+49e83a2c382e   43 minutes ago   /bin/sh -c #(nop) WORKDIR /home/join            0B        
+e8e653b8046c   43 minutes ago   /bin/sh -c #(nop) COPY dir:c66223f713d6c7329…   268MB     
+9499db781771   3 weeks ago      /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
+<missing>      3 weeks ago      /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B        
+<missing>      3 weeks ago      /bin/sh -c rm -rf /var/lib/apt/lists/*          0B        
+<missing>      3 weeks ago      /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B      
+<missing>      3 weeks ago      /bin/sh -c #(nop) ADD file:8eef54430e581236e…   131MB     
 ~>/Dockerized-join-calculus$ 
 ```
-Version v2.2 : 
-```
->/Dockerized-join-calculus$ sudo docker history jocaml:latest
-IMAGE          CREATED         CREATED BY                                      SIZE      COMMENT
-ac09976f6ab7   2 minutes ago   /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
-184011093dac   2 minutes ago   /bin/sh -c #(nop)  USER join                    0B        
-6d59f9cb8c19   2 minutes ago   /bin/sh -c chown --recursive join:group /hom…   0B        
-cbfae1cd0687   2 minutes ago   /bin/sh -c adduser --disabled-password --sys…   40.4kB    
-a69a3df181e1   2 minutes ago   /bin/sh -c addgroup --system group              2.1kB     
-8429ba73f0ca   2 minutes ago   /bin/sh -c #(nop) WORKDIR /home/join            0B        
-64ee99783dcb   2 minutes ago   /bin/sh -c #(nop) COPY dir:96fa3f2aa449fead0…   269MB     
-9499db781771   3 weeks ago     /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
-<missing>      3 weeks ago     /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B        
-<missing>      3 weeks ago     /bin/sh -c rm -rf /var/lib/apt/lists/*          0B        
-<missing>      3 weeks ago     /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B      
-<missing>      3 weeks ago     /bin/sh -c #(nop) ADD file:8eef54430e581236e…   131MB
-```
+
