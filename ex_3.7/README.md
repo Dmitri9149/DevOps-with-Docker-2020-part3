@@ -1,4 +1,8 @@
-The ouput of history command for the original Dockerfile (see Dockerfile_original):
+The Dockerfile is for the JoCaml language containerization. JoCaml is programming 
+language on the basis of join-calculus: parallel distributed process calculus (qute fundumental calculus, an alternative to lambda calcuus). 
+See my project on GitHub: https://github.com/Dmitri9149/Dockerized-join-calculus 
+
+The ouput of history command for the original Dockerfile (see Dockerfile_init):
 (the size of image is about 532.36 MB)
 ```
 ~>/Dockerized-join-calculus$ sudo docker history jocaml:latest
