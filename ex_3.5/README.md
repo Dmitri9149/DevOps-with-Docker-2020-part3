@@ -1,6 +1,7 @@
 ### Some experiments with Dockerfiles, images and sizes.
 
-For the 1.10 ex. frontend, Dockerfile (from which we start): image size is about 682.2 MB 
+For the 1.10 ex. frontend, Dockerfile  
+(from which we start: https://github.com/Dmitri9149/DevOps-with-Doker-2020): image size is about 682.2 MB 
 (base image ubuntu) + copy project from local folder
 
 ```
@@ -25,7 +26,8 @@ b25d03f486b0   4 minutes ago        /bin/sh -c #(nop) WORKDIR /dist             
 ```
 ->---------------------------------------------------------------------
 
-For ex. 1.11 backend: image size is about 366.00 MB.
+For ex. 1.11 backend:https://github.com/Dmitri9149/DevOps-with-Doker-2020  
+image size is about 366.00 MB.
 Base image ubuntu, copy project from local folder.
 
 ```
