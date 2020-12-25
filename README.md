@@ -584,7 +584,7 @@ Glossary. And some helpful diagrams
 I prefer to use draw.io but you can use whichever tool you want.
 
 ->----------------------------------------------------------------------------
-See https://github.com/Dmitri9149/DevOps-with-Docker-2020-part3/blob/master/Kubernets_picture.ipynb 
+See https://github.com/Dmitri9149/DevOps-with-Docker-2020-part3/blob/master/Kubernets_picture.ipynb  in this repository.
 
 (or Kubernetes.png file in ex_3.8 folder) 
 
