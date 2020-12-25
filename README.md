@@ -5,14 +5,14 @@ https://github.com/aanykanen/docker-mooc-2020
 and
 https://github.com/McFizh/devops-docker-2020
 
-->-----------------------------------------------------------
+->-----------------------------------------------------------   
 3.1
 Return back to our frontend & backend Dockerfiles and you should see the some mistakes we now know to fix.
 
 Document both image sizes at this point, as was done in the material. Optimize the Dockerfiles of both programs, frontend and backend, by joining the RUN commands and removing useless parts.
 
 After your improvements document the image sizes again. The size difference may not be very much yet. The frontend should be around 432MB when using FROM ubuntu:16.04. The backend should be around 351MB. The sizes may vary.
-->------------------------------------------------------------------
+->------------------------------------------------------------------       
 ```
 /back$ sudo docker image ls -a
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -49,7 +49,7 @@ d6e46aa2470d        3 weeks ago          /bin/sh -c #(nop)  CMD ["/bin/sh"]     
 <missing>           3 weeks ago          /bin/sh -c #(nop) ADD file:f17f65714f703db90…   5.57MB              
 ~>/front$ 
 ```
-->---------------------------------------
+->---------------------------------------             
 3.2 A deployment pipeline to heroku
 Let’s create our first deployment pipeline!
 
@@ -63,14 +63,14 @@ CircleCI offers orbs for Heroku deployment, but you can just use the instruction
 
 Submit a link to the repository with the config.
 
-->---------------------------------------------------------------
+->---------------------------------------------------------------           
 
 The deployment pipeline to Heroku was done with GiHub actions    
 (see .github/workflows/ex_3_2.yaml)
 
 The app is here : https://docker-devops-2020.herokuapp.com/
 
-->---------------------------------------------------------------
+->---------------------------------------------------------------     
 3.3 Building images inside of a container
 Watchtower uses volume to docker.sock socket to access Docker daemon of the host from the container. By leveraging this ourselves we can create our own simple build service.
 
@@ -81,7 +81,7 @@ You can use any programming language / technology for the project implementation
 Then create a Dockerfile for it so that it can be run inside a container.
 
 Make sure that it can build at least some of the example projects.
-->--------------------------------------------------------------------
+->--------------------------------------------------------------------    
 
 ```
 ~>/ex_3.3$ sudo docker-compose up
@@ -522,7 +522,7 @@ get_and_build_1  | 61c98073dd01: Pushed
 get_and_build_1  | latest: digest: sha256:ad7eb3eafb48efd633170db51affc8a5732ad4511ae23786bd747b49adcd962b size: 2195
 ex_33_get_and_build_1 exited with code 0
 ~>/ex_3.3$ ~```
-->-----------------------------------------------------------------
+->-----------------------------------------------------------------     
 3.4
 This exercise is mandatory
 
@@ -531,11 +531,11 @@ Security issues with the user being a root are serious for the example frontend 
 Make sure the containers start their processes as a non-root user.
 
 TIP man chown may help you if you have access errors
-->---------------------------------------------------------------
+->---------------------------------------------------------------     
 
 See ex_3.4/front and ex_3.4/back   Dockerfiles
-->--------------------------------------------------------
-->----------------------------------------------------------
+->--------------------------------------------------------    
+->----------------------------------------------------------   
 3.5
 Document the image size before the changes.
 
@@ -544,12 +544,12 @@ Rather than going to FROM alpine or scratch, lets go look into docker-node and w
 Return back to our frontend & backend Dockerfiles and change the FROM to something more suitable. Make sure the application still works after the changes.
 
 Document the size after this change. If you used the alpine version the size for frontend can be less than 250MB. The backend can be below 150MB.
-->-------------------------------------------------------------
+->-------------------------------------------------------------   
 
 See ex_3.5 folder README.md
 
-->------------------------------------------------------------------
-->--------------------------------------------------------------------
+->------------------------------------------------------------------     
+->--------------------------------------------------------------------     
 
 3.6
 Multi-stage builds. Lets do a multi-stage build for the frontend project since we’ve come so far with the application.
@@ -557,19 +557,19 @@ Multi-stage builds. Lets do a multi-stage build for the frontend project since w
 Even though multi-stage builds are designed mostly for binaries in mind, we can leverage the benefits with our frontend project as having original source code with the final assets makes little sense. Build it with the instructions in README and the built assets should be in dist folder.
 
 You can still use the serve to serve the static files or try out something else.
-->--------------------------------------------------------------------
+->--------------------------------------------------------------------    
 
 See README.md ex_3.6
 
-->----------------------------------------------------------------------------
-->------------------------------------------------------------------------------
+->----------------------------------------------------------------------------  
+->------------------------------------------------------------------------------  
 3.7
 Do all or most of the optimizations from security to size for any other Dockerfile you have access to, in your own project or for example the ones used in previous “standalone” exercises. Please document Dockerfiles both before and after.
 
 See README.md ex_3.7
 
-->--------------------------------------------------------------------
-->----------------------------------------------------------------------
+->--------------------------------------------------------------------   
+->----------------------------------------------------------------------   
 3.8 Kubernetes
 Familiarize yourself with Kubernetes terminology and draw a diagram.
 
@@ -583,10 +583,10 @@ Glossary. And some helpful diagrams
 
 I prefer to use draw.io but you can use whichever tool you want.
 
-->----------------------------------------------------------------------------
+->----------------------------------------------------------------------------  
 See https://github.com/Dmitri9149/DevOps-with-Docker-2020-part3/blob/master/Kubernets_picture.ipynb  in this repository.
 
 (or Kubernetes.png file in ex_3.8 folder) 
 
-->--------------------------------------------------------
+->--------------------------------------------------------    
 
