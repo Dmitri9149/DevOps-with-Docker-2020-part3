@@ -1,0 +1,1 @@
+See https://github.com/Dmitri9149/DevOps-with-Docker-2020-part3/blob/master/Kubernets_picture.ipynb   file in the root of the repository for better view. 
