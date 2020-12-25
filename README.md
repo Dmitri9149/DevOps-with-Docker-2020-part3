@@ -1,5 +1,10 @@
 ### DevOps with Docker https://devopswithdocker.com/ part3 exercises 
 
+I used some tips from : 
+https://github.com/aanykanen/docker-mooc-2020  
+and
+https://github.com/McFizh/devops-docker-2020
+
 ->-----------------------------------------------------------
 3.1
 Return back to our frontend & backend Dockerfiles and you should see the some mistakes we now know to fix.
