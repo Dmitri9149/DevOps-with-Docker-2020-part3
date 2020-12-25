@@ -554,11 +554,15 @@ Even though multi-stage builds are designed mostly for binaries in mind, we can 
 You can still use the serve to serve the static files or try out something else.
 ->--------------------------------------------------------------------
 
+See README.md ex_3.6
 
 ->----------------------------------------------------------------------------
 ->------------------------------------------------------------------------------
 3.7
 Do all or most of the optimizations from security to size for any other Dockerfile you have access to, in your own project or for example the ones used in previous “standalone” exercises. Please document Dockerfiles both before and after.
+
+See README.md ex_3.7
+
 ->--------------------------------------------------------------------
 ->----------------------------------------------------------------------
 
